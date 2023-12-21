@@ -1,0 +1,14 @@
+DROP TABLE IF EXISTS water_sensors;
+
+
+CREATE TABLE IF NOT EXISTS water_sensors (
+    id SERIAL PRIMARY KEY,
+    device_id text NOT NULL,
+    Month INTEGER NOT NULL,
+    Year INTEGER NOT NULL,
+    pH REAL NOT NULL,
+    Ba DECIMAL NOT NULL,
+    Cu DECIMAL NOT NULL,
+    Fe DECIMAL NOT NULL,
+    Viruses DECIMAL NOT NULL
+);

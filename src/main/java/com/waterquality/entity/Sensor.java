@@ -1,41 +1,45 @@
 package com.waterquality.entity;
-
-
+import jakarta.persistence.*;
 import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.math.BigDecimal;
+
+@Setter
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
+@Table(name = "sensors")
+@Entity
 public class Sensor {
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
+    private Integer id;
 
+    @Column(name = "device_id", nullable = false, length = Integer.MAX_VALUE)
+    private String deviceId;
 
-    @Setter @Getter private String devicedId;
-    @Setter @Getter private int month;
-    @Setter @Getter private int year;
-    @Setter @Getter private long pH;
-    @Setter @Getter private long barium;
-    @Setter @Getter private long copper;
-    @Setter @Getter private long iron;
-    @Setter @Getter private long viruses;
+    @Column(name = "month", nullable = false)
+    private Integer month;
 
+    @Column(name = "year", nullable = false)
+    private int year;
 
+    @Column(name = "ph", nullable = false)
+    private float ph;
 
-    @Override
-    public String toString() {
-        return "Sensor{" +
-                "id=" + id +
-                ", devicdId='" + devicedId + '\'' +
-                ", month=" + month +
-                ", year=" + year +
-                ", pH=" + pH +
-                ", barium=" + barium +
-                ", copper=" + copper +
-                ", iron=" + iron +
-                ", viruses=" + viruses +
-                '}';
-    }
+    @Column(name = "ba", nullable = false)
+    private float ba;
 
+    @Column(name = "cu", nullable = false)
+    private float cu;
 
+    @Column(name = "fe", nullable = false)
+    private float fe;
+
+    @Column(name = "viruses", nullable = false)
+    private float viruses;
 
 }

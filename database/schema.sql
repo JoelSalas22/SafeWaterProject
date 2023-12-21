@@ -1,7 +1,7 @@
-DROP TABLE IF EXISTS water_sensors;
+DROP TABLE IF EXISTS sensors;
 
 
-CREATE TABLE IF NOT EXISTS water_sensors (
+CREATE TABLE IF NOT EXISTS sensors (
     id SERIAL PRIMARY KEY,
     device_id text NOT NULL,
     Month INTEGER NOT NULL,
@@ -12,3 +12,5 @@ CREATE TABLE IF NOT EXISTS water_sensors (
     Fe DECIMAL NOT NULL,
     Viruses DECIMAL NOT NULL
 );
+
+

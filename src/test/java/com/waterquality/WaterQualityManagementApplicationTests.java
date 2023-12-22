@@ -8,6 +8,7 @@ class WaterQualityManagementApplicationTests {
 
     @Test
     void contextLoads() {
+        
     }
 
 }

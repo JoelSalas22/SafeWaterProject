@@ -19,4 +19,7 @@ public class SensorDto implements Serializable {
     float cu;
     float fe;
     float viruses;
+
+    // decimal in java is a
+
 }

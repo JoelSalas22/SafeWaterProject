@@ -5,4 +5,13 @@
     <option name="generateJpaOnGetter" value="true" />
     <option name="scaffoldingLanguage" />
   </component>
+  <component name="PersistenceUnitSettings">
+    <persistence-units>
+      <persistence-unit name="Default" defaultSearchScope="Test only">
+        <packages>
+          <package value="com.waterquality" />
+        </packages>
+      </persistence-unit>
+    </persistence-units>
+  </component>
 </project>

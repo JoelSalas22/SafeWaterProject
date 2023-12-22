@@ -4,7 +4,7 @@ import lombok.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.math.BigDecimal;
+
 
 @Setter
 @Getter
@@ -22,7 +22,7 @@ public class Sensor {
     private String deviceId;
 
     @Column(name = "month", nullable = false)
-    private Integer month;
+    private int month;
 
     @Column(name = "year", nullable = false)
     private int year;

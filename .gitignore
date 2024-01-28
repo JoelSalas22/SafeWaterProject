@@ -1,4 +1,5 @@
 HELP.md
+/.DS_Store
 /.env
 target/
 !.mvn/wrapper/maven-wrapper.jar
@@ -20,6 +21,7 @@ target/
 *.iml
 *.ipr
 ./.settings
+/.jpb
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
@@ -32,3 +34,11 @@ build/
 
 ### VS Code ###
 .vscode/
+### Others ###
+*.log
+*.sql
+*.jpa
+*.pid
+*.war
+*.jar
+*.class

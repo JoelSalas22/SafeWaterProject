@@ -7,7 +7,7 @@
   </component>
   <component name="PersistenceUnitSettings">
     <persistence-units>
-      <persistence-unit name="Default" defaultSearchScope="Test only">
+      <persistence-unit name="Default">
         <packages>
           <package value="com.waterquality" />
         </packages>

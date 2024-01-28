@@ -2,21 +2,37 @@ package com.waterquality.repository;
 
 import com.waterquality.entity.Sensor;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
 
+@Transactional
 @Repository
-public interface SensorRepository extends JpaRepository<Sensor, Integer>, JpaSpecificationExecutor<Sensor> {
+public interface SensorRepository extends JpaRepository<Sensor, Long>  {
 
-    List<Sensor> findAllByDeviceId(String deviceId);
+        public Sensor newSensor(Sensor sensor);
 
-    Sensor deleteSensorById(Integer id);
 
-    @Query("select s from Sensor s where s.month = ?1")
-    Optional<Sensor> findByMonth(Integer month);
+        public Sensor getSensorById(Long id);
+
+        public Sensor getSensorBySensorName(String sensorName);
+
+        public List<Sensor> getSensorByLocationContainingIgnoreCaseOrderByLocation(String location);
+
+
+
+        public Sensor updateSensorById(Sensor sensor, Long id);
+
+        public Sensor deleteSensorById(Long id);
+
+        public Sensor deleteSensorBySensorName(String sensorName);
+
+        @Query("select s from Sensor s where s.isActive = ?1")
+        public List<Sensor> getSensorByStatus (boolean status);
+
+
+        public List<Sensor> getSensorsByYear(String year);
+
 }

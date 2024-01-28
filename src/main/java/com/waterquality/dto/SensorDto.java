@@ -1,25 +1,28 @@
 package com.waterquality.dto;
 
-import lombok.Value;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import lombok.*;
 
-import java.io.Serializable;
-import java.math.BigDecimal;
 
-/**
- * DTO for {@link com.waterquality.entity.Sensor}
+/*
+    * DTO for {@link com.waterquality.entity.Sensor}
  */
-@Value
-public class SensorDto implements Serializable {
-    Integer id;
-    String deviceId;
-    Integer month;
-    int year;
-    float ph;
-    float ba;
-    float cu;
-    float fe;
-    float viruses;
 
-    // decimal in java is a
 
+@Getter
+@Setter
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
+public class SensorDto {
+    @Id
+    @GeneratedValue
+    private long sensorId;
+
+    private String sensorName;
+
+    private boolean isActive;
+
+    private String location;
 }

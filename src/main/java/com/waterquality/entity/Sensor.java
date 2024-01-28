@@ -1,45 +1,31 @@
 package com.waterquality.entity;
+
 import jakarta.persistence.*;
 import lombok.*;
-import lombok.Getter;
-import lombok.Setter;
+import org.hibernate.proxy.HibernateProxy;
+
+import java.util.Objects;
 
 
 
-@Setter
 @Getter
-@AllArgsConstructor
+@Setter
 @NoArgsConstructor
-@Table(name = "sensors")
+@Table(name = "Sensor")
 @Entity
+@ToString
+@Data
 public class Sensor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private Integer id;
+    @Column(name = "sensor_id")
+    private Long id;
+    @Column(name = "sensor_name")
 
-    @Column(name = "device_id", nullable = false, length = Integer.MAX_VALUE)
-    private String deviceId;
-
-    @Column(name = "month", nullable = false)
-    private int month;
-
-    @Column(name = "year", nullable = false)
-    private int year;
-
-    @Column(name = "ph", nullable = false)
-    private float ph;
-
-    @Column(name = "ba", nullable = false)
-    private float ba;
-
-    @Column(name = "cu", nullable = false)
-    private float cu;
-
-    @Column(name = "fe", nullable = false)
-    private float fe;
-
-    @Column(name = "viruses", nullable = false)
-    private float viruses;
-
+    private String sensorName;
+    @Column(name = "is_active")
+    private boolean isActive;
+    @Column(name = "location")
+    private String location;
 }
+

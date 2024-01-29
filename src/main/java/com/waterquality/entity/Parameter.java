@@ -2,12 +2,9 @@ package com.waterquality.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-@Getter
-@Setter
+
 @Entity
 @Table(name = "Parameters")
-@AllArgsConstructor
-@NoArgsConstructor
 @ToString
 @Data
 public class Parameter {

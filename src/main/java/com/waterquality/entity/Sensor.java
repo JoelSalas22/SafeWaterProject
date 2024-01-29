@@ -8,9 +8,6 @@ import java.util.Objects;
 
 
 
-@Getter
-@Setter
-@NoArgsConstructor
 @Table(name = "Sensor")
 @Entity
 @ToString
@@ -19,12 +16,12 @@ public class Sensor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "sensor_id")
-    private Long id;
+    private long id;
     @Column(name = "sensor_name")
 
     private String sensorName;
     @Column(name = "is_active")
-    private boolean isActive;
+    private boolean active;
     @Column(name = "location")
     private String location;
 }

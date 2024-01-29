@@ -1,6 +1,9 @@
 package com.waterquality.mapper;
 
 import com.waterquality.dto.SensorDataDto;
+import com.waterquality.dto.SensorDto;
+import com.waterquality.entity.Parameter;
+import com.waterquality.entity.Sensor;
 import com.waterquality.entity.SensorData;
 import lombok.NoArgsConstructor;
 
@@ -10,41 +13,25 @@ import java.util.List;
 @NoArgsConstructor
 public class SensorDataMapper {
 
-    public SensorDataDto mapToDto(SensorData sensorData) {
+    public static SensorDataDto toDTO(SensorData sensorData) {
         SensorDataDto dto = new SensorDataDto();
         dto.setId(sensorData.getId());
-        dto.setSensor(sensorData.getSensor());
-        dto.setParameter(sensorData.getParameter());
+        dto.setSensorId(sensorData.getId());
+        dto.setParameterId(sensorData.getParameter().getParameterId());
         dto.setYear(sensorData.getYear());
         dto.setMonth(sensorData.getMonth());
         dto.setParameterValue(sensorData.getParameterValue());
         return dto;
     }
 
-    public SensorData mapToEntity(SensorDataDto sensorDataDto) {
+    public static SensorData toEntity(SensorDataDto dto, Sensor sensor, Parameter parameter) {
         SensorData sensorData = new SensorData();
-        sensorData.setId(sensorDataDto.getId());
-        sensorData.setSensor(sensorDataDto.getSensor());
-        sensorData.setParameter(sensorDataDto.getParameter());
-        sensorData.setYear(sensorDataDto.getYear());
-        sensorData.setMonth(sensorDataDto.getMonth());
-        sensorData.setParameterValue(sensorDataDto.getParameterValue());
+        sensorData.setId(dto.getId());
+        sensorData.setSensor(sensor);
+        sensorData.setParameter(parameter);
+        sensorData.setYear(dto.getYear());
+        sensorData.setMonth(dto.getMonth());
+        sensorData.setParameterValue(dto.getParameterValue());
         return sensorData;
-    }
-
-    public List<SensorData> toEntityList(List<SensorDataDto> sensorDataDtoList) {
-        List<SensorData> sensorDataList = new ArrayList<>();
-        for (SensorDataDto sensorDataDto : sensorDataDtoList) {
-            sensorDataList.add(mapToEntity(sensorDataDto));
-        }
-        return sensorDataList;
-    }
-
-    public List<SensorDataDto> toDtoList(List<SensorData> sensorDataList) {
-        List<SensorDataDto> sensorDataDtoList = new ArrayList<>();
-        for (SensorData sensorData : sensorDataList) {
-            sensorDataDtoList.add(mapToDto(sensorData));
-        }
-        return sensorDataDtoList;
     }
 }

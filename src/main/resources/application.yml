@@ -11,16 +11,10 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
-
 server:
   port: 8081
-
 management:
   endpoints:
     web:
       exposure:
         include: "*"
-logging:
-  level:
-    org.springframework.web: DEBUG
-    org.hibernate: ERROR

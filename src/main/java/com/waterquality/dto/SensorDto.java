@@ -16,8 +16,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SensorDto {
-    @Id
-    @GeneratedValue
+
     private long sensorId;
 
     private String sensorName;

@@ -14,9 +14,9 @@ import lombok.*;
 public class SensorDataDto {
     private long id;
 
-    private Sensor sensor;
+    private long sensorId;
 
-    private Parameter parameter;
+    private long parameterId;
 
     private String year;
 
